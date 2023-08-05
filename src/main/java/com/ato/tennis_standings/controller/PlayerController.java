@@ -22,4 +22,11 @@ public class PlayerController {
         log.info("PlayerResponse: {}", playerResponse);
         return ResponseEntity.ok(playerResponse);
     }
+
+    @GetMapping("/players/{id}")
+    public ResponseEntity<PlayerResponse> getPlayerById(Long id) {
+        PlayerResponse playerResponse =  playerService.getPlayerById(id);
+        log.info("PlayerResponse: {}", playerResponse);
+        return ResponseEntity.ok(playerResponse);
+    }
 }
