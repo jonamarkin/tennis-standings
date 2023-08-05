@@ -7,14 +7,14 @@ import lombok.NoArgsConstructor;
 
 
 @Entity
-@Table(name = "player")
+@Table(name = "players")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     @Column(name = "name", nullable = false)
     private String name;
@@ -30,4 +30,13 @@ public class Player {
 
     @Column(name = "games_lost")
     private int gamesLost;
+
+    //Constructor without id
+    public Player(String name, int points, int gamesPlayed, int gamesWon, int gamesLost) {
+        this.name = name;
+        this.points = points;
+        this.gamesPlayed = gamesPlayed;
+        this.gamesWon = gamesWon;
+        this.gamesLost = gamesLost;
+    }
 }
