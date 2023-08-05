@@ -1,0 +1,10 @@
+CREATE TABLE players (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    points INT  DEFAULT 0,
+    games_played INT DEFAULT 0,
+    games_won INT DEFAULT 0,
+    games_lost INT DEFAULT 0,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
